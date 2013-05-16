@@ -1,7 +1,7 @@
 describe( 'Object', function() {
 
     describe( 'browser support check (is a function)', function() {
-        var ObjectFunc = [
+        var Func = [
             'apply',
             'call',
             'getPrototypeOf',
@@ -19,7 +19,7 @@ describe( 'Object', function() {
             'keys'
         ];
 
-        var ObjectProtoFunc = [
+        var ProtoFunc = [
             'toString',
             'toLocaleString',
             'valueOf',
@@ -28,13 +28,13 @@ describe( 'Object', function() {
             'propertyIsEnumerable'
         ];
 
-        _( ObjectFunc ).each( function( key ) {
+        _( Func ).each( function( key ) {
             it( 'Object.' + key + '()', function() {
                 expect( Object[ key ] ).to.be.a( 'function' );
             });
         });
 
-        _( ObjectProtoFunc ).each( function( key ) {
+        _( ProtoFunc ).each( function( key ) {
             it( 'Object.prototype.' + key + '()', function() {
                 expect( Object.prototype[ key ] ).to.be.a( 'function' );
             });

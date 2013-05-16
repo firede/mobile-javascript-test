@@ -1,7 +1,7 @@
 describe( 'Array', function() {
 
     describe( 'browser support check (is a function)', function() {
-        var ArrayProtoFunc = [
+        var ProtoFunc = [
             'concat',
             'every',
             'join',
@@ -25,15 +25,13 @@ describe( 'Array', function() {
             'valueOf'
         ];
 
-        _( ArrayProtoFunc ).each( function( key ) {
+        _( ProtoFunc ).each( function( key ) {
             it( 'Array.prototype.' + key + '()', function() {
                 expect( Array.prototype[ key ] ).to.be.a( 'function' );
             });
         });
-    });
 
-    describe( 'Array.isArray()', function() {
-        it( 'browser support', function() {
+        it( 'Array.isArray()', function() {
             expect( Array.isArray ).to.be.a( 'function' );
             expect( Array.isArray( [] ) ).to.be.ok();
             expect( Array.isArray( [ 'a', 'b' ] ) ).to.be.ok();
